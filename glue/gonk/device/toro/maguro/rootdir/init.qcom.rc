@@ -156,7 +156,7 @@ service cnd /system/bin/cnd
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p17
     user root
-#    disabled
+    disabled
 
 on property:ro.emmc=1
     start rmt_storage
@@ -194,7 +194,6 @@ service dund /system/bin/sdptool add --channel=1 DUN
 service bridgemgrd /system/bin/bridgemgrd
     user radio
     group radio
-    disabled
 
 service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
     user system
@@ -212,15 +211,12 @@ on property:ro.baseband="unknown"
 service qmiproxy /system/bin/qmiproxy
     user radio
     group radio
-    disabled
 
 service qmuxd /system/bin/qmuxd
     user radio
     group radio
-    disabled
 
 service netmgrd /system/bin/netmgrd
-    disabled
 
 service sensors /system/bin/sensors.qcom
     user root
@@ -257,14 +253,14 @@ service amp_unload /system/bin/amploader -u
     disabled
     oneshot
 
-service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
     user root
     group wifi inet
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -BKLG wlan0
+service dhcpcd_wlan0 /system/bin/dhcpcd -BKL wlan0
     disabled
     oneshot
 
@@ -401,3 +397,8 @@ service profiler_daemon /system/bin/profiler_daemon
     user root
     group root
     disabled
+
+service wlan_tool /system/bin/wlan_tool
+    user root
+    group wifi system net_admin inet shell
+    oneshot

@@ -93,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_LOCALES := hdpi
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/toro/maguro/kernel
+    LOCAL_KERNEL := device/toro/akami/kernel
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -101,11 +101,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-PRODUCT_COPY_FILES += device/toro/maguro/sensor00fn11.idc:system/usr/idc/sensor00fn11.idc
+PRODUCT_COPY_FILES += device/toro/akami/ft5x0x_ts.idc:system/usr/idc/ft5x0x_ts.idc
 
 # See comment at the top of this file. This is where the other
 # half of the device-specific product definition file takes care
 # of the aspects that require proprietary drivers that aren't
 # commonly available
-$(call inherit-product-if-exists, vendor/toro/maguro/maguro-vendor.mk)
+$(call inherit-product-if-exists, vendor/toro/akami/akami-vendor.mk)
 

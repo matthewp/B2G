@@ -15,6 +15,8 @@ ${DBG_CMD} $B2G_HOME/glue/gonk/out/host/linux-x86/bin/emulator \
    -sysdir $B2G_HOME/glue/gonk/out/target/product/generic/ \
    -data $B2G_HOME/glue/gonk/out/target/product/generic/userdata.img \
    -memory 512 \
-   -skin 480x800 \
+   -partition-size 512 \
+   -skindir $B2G_HOME/glue/gonk/development/tools/emulator/skins \
+   -skin WVGA854 \
    -verbose \
    -qemu -cpu 'cortex-a8' $TAIL_ARGS

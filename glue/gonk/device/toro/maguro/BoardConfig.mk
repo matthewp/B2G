@@ -32,7 +32,7 @@ ifeq ($(QC_PROP),true)
 
 else
 #    BOARD_USES_GENERIC_AUDIO := true
-    USE_CAMERA_STUB := true
+    USE_CAMERA_STUB := false
     BOARD_HAVE_BLUETOOTH := true
 
 endif # QC_PROP
@@ -61,6 +61,12 @@ QCOM_TARGET_PRODUCT := msm7627a_sku1
 # to link with the older source
 TARGET_LIBCAMERA_BLOB_SYM_MISMATCH := true
 
+# Enable newer vtable layout for audio interfaces.
+TARGET_AUDIO_INTERFACE_NEWER_VTABLE := true
+COMMON_GLOBAL_CFLAGS += -DENABLE_NEWER_AUDIO_INTERFACE_VTABLE
+
+COMMON_GLOBAL_CFLAGS += -DENABLE_GRALLOC_NUMFB
+
 TARGET_CORTEX_CACHE_LINE_32 := true
 BOARD_KERNEL_BASE    := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
@@ -70,14 +76,14 @@ BOARD_KERNEL_SPARESIZE := 128
 BOARD_HAS_8BIT_BCHECC_SUPPORT := true
 BOARD_KERNEL_BCHECC_SPARESIZE := 160
 
-# Support to build images for 2K NAND page
-BOARD_SUPPORTS_2KNAND_PAGE := true
-BOARD_KERNEL_2KPAGESIZE := 2048
-BOARD_KERNEL_2KSPARESIZE := 64
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE += mem=256M
+# The default touch event polling time of 30ms currently causes the FPS while
+# panning to be artificially limited.  Increasing polling to 15ms gives +60 FPS.
+BOARD_KERNEL_CMDLINE += rmi_sensor.polltime=15000000
 ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_EGL_CFG := vendor/toro/common/proprietary/egl/egl.cfg
 
@@ -113,3 +119,19 @@ endif
 # Atheros ---
 
 #TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_qcom
+
+# Maguro blobs expect the following property values. Sneak them into
+# /build.prop so that the defaults added to /system/build.prop by the
+# build system are ignored (easier than messing around with the core
+# build system at the moment.)
+#
+# TODO: This should eventually be fixed properly by renaming device/
+#       directories...
+#
+ADDITIONAL_DEFAULT_PROPERTIES :=  \
+   ro.product.model=msm7627a_sku1 \
+   ro.product.brand=qcom \
+   ro.product.name=msm7627a_sku1 \
+   ro.product.device=msm7627a_sku1 \
+   ro.product.board=msm7627a_sku1 \
+   ro.build.product=msm7627a_sku1 \

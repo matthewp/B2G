@@ -10,6 +10,7 @@ sys=`uname -s | tr "[[:upper:]]" "[[:lower:]]"`
 
 ac_add_options --target=arm-android-eabi
 ac_add_options --with-gonk="$gonk"
+ac_add_options --with-gonk-toolchain-prefix="$TARGET_TOOLS_PREFIX"
 ac_add_options --with-endian=little
 
 ac_add_options --enable-application=b2g
@@ -18,6 +19,13 @@ ac_add_options --disable-elf-hack
 ac_add_options --enable-debug-symbols
 ac_add_options --enable-profiling
 ac_add_options --with-ccache
+ac_add_options --enable-marionette
+
+ac_add_options --enable-updater
+#ac_add_options --enable-update-channel=nightly
+ac_add_options --enable-update-packaging
+
+ac_add_options --enable-omx-plugin
 
 # Enable dump() from JS.
-export CXXFLAGS=-DMOZ_ENABLE_JS_DUMP
+export CXXFLAGS="-DMOZ_ENABLE_JS_DUMP $EXTRA_INCLUDE"

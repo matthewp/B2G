@@ -7,9 +7,6 @@
 [submodule "glue/gonk/bionic"]
 	path = glue/gonk/bionic
 	url = git://github.com/mozilla-b2g/platform_bionic.git
-[submodule "glue/gonk/external/esd"]
-	path = glue/gonk/external/esd
-	url = git://android.git.linaro.org/platform/external/esd.git
 [submodule "glue/gonk/external/astl"]
 	path = glue/gonk/external/astl
 	url = git://android.git.linaro.org/platform/external/astl.git
@@ -97,9 +94,6 @@
 [submodule "glue/gonk/external/freetype"]
 	path = glue/gonk/external/freetype
 	url = git://android.git.linaro.org/platform/external/freetype.git
-[submodule "glue/gonk/external/chromium"]
-	path = glue/gonk/external/chromium
-	url = git://android.git.linaro.org/platform/external/chromium.git
 [submodule "glue/gonk/external/libnfc-nxp"]
 	path = glue/gonk/external/libnfc-nxp
 	url = git://android.git.linaro.org/platform/external/libnfc-nxp.git
@@ -150,7 +144,7 @@
 	url = git://android.git.linaro.org/platform/external/expat.git
 [submodule "glue/gonk/external/dbus"]
 	path = glue/gonk/external/dbus
-	url = git://android.git.linaro.org/platform/external/dbus.git
+	url = git://github.com/mozilla-b2g/platform_external_dbus.git
 [submodule "glue/gonk/external/protobuf"]
 	path = glue/gonk/external/protobuf
 	url = git://android.git.linaro.org/platform/external/protobuf.git
@@ -246,10 +240,7 @@
 	url = git://android.git.linaro.org/platform/external/safe-iop.git
 [submodule "glue/gonk/prebuilt"]
 	path = glue/gonk/prebuilt
-	url = git://android.git.linaro.org/platform/prebuilt.git
-[submodule "glue/gonk/dalvik"]
-	path = glue/gonk/dalvik
-	url = git://android.git.linaro.org/platform/dalvik.git
+	url = git://github.com/mozilla-b2g/platform_prebuilt.git
 [submodule "glue/gonk/system/bluetooth"]
 	path = glue/gonk/system/bluetooth
 	url = git://github.com/mozilla-b2g/android_system_bluetooth.git
@@ -261,7 +252,7 @@
 	url = git://android.git.linaro.org/platform/system/netd.git
 [submodule "glue/gonk/system/vold"]
 	path = glue/gonk/system/vold
-	url = git://android.git.linaro.org/platform/system/vold.git
+	url = git://github.com/mozilla-b2g/android-system-vold.git
 [submodule "glue/gonk/system/core"]
 	path = glue/gonk/system/core
 	url = git://github.com/cgjones/android-system-core.git
@@ -279,7 +270,7 @@
 	url = git://github.com/cgjones/android-device-crespo.git
 [submodule "glue/gonk/sdk"]
 	path = glue/gonk/sdk
-	url = git://github.com/shianyow/android-sdk.git
+	url = git://github.com/mozilla-b2g/android-sdk.git
 [submodule "glue/gonk/frameworks/opt/emoji"]
 	path = glue/gonk/frameworks/opt/emoji
 	url = git://android.git.linaro.org/platform/frameworks/opt/emoji.git
@@ -294,7 +285,7 @@
 	url = git://github.com/mozilla-b2g/android-hardware_legacy.git
 [submodule "glue/gonk/hardware/libhardware"]
 	path = glue/gonk/hardware/libhardware
-	url = git://android.git.linaro.org/platform/hardware/libhardware.git
+	url = git://github.com/mozilla-b2g/android-hardware-libhardware.git
 [submodule "glue/gonk/hardware/broadcom/wlan"]
 	path = glue/gonk/hardware/broadcom/wlan
 	url = git://android.git.linaro.org/platform/hardware/broadcom/wlan.git
@@ -340,9 +331,6 @@
 [submodule "glue/gonk/device/samsung/c1-common"]
 	path = glue/gonk/device/samsung/c1-common
 	url = git://github.com/cgjones/android_device_samsung_c1-common.git
-[submodule "gaia"]
-	path = gaia
-	url = git://github.com/matthewp/gaia.git
 [submodule "boot/clockworkmod_galaxys2_initramfs"]
 	path = boot/clockworkmod_galaxys2_initramfs
 	url = git://github.com/michaelwu/clockworkmod_galaxys2_initramfs.git
@@ -352,3 +340,24 @@
 [submodule "boot/msm"]
 	path = boot/msm
 	url = git://codeaurora.org/quic/qrd-android/kernel/msm.git
+[submodule "marionette"]
+	path = marionette
+	url = git://github.com/mozilla/marionette_client.git
+[submodule "glue/gonk/external/busybox"]
+	path = glue/gonk/external/busybox
+	url = git://android.git.linaro.org/platform/external/busybox.git
+[submodule "toolchains"]
+	path = toolchains
+	url = git://github.com/mozilla-b2g/b2g-toolchains.git
+[submodule "automation/b2gautomation"]
+	path = automation/b2gautomation
+	url = git://github.com/jonallengriffin/b2gautomation.git
+[submodule "boot/initramfs-galaxy-s2-ics"]
+	path = boot/initramfs-galaxy-s2-ics
+	url = git://github.com/mozilla-b2g/initramfs-galaxy-s2-ics
+[submodule "boot/kernel-android-galaxy-s2-ics"]
+	path = boot/kernel-android-galaxy-s2-ics
+	url = git://github.com/mozilla-b2g/kernel-android-galaxy-s2-ics.git
+[submodule "gaia"]
+	path = gaia
+	url = git://github.com/matthewp/gaia.git
