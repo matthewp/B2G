@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *~
 .config.mk
 local.mk
@@ -8,3 +9,35 @@ glue/gonk-ics
 download-nexuss
 download-nexuss-ics
 objdir-gecko
+=======
+.config
+.repo/
+.userconfig
+*.swp
+Makefile
+abi/
+bionic/
+bootable/
+build/
+dalvik/
+development/
+device/
+download-galaxy-nexus/
+download-nexus-s/
+external/
+frameworks/
+gaia/
+gecko/
+gonk-misc/
+hardware/
+libcore/
+ndk/
+objdir-gecko/
+out/
+prebuilt/
+prebuilts/
+rilproxy/
+sdk/
+system/
+vendor/
+>>>>>>> da97597bbf04b8f5bde5e3d041645e8b304010b0
