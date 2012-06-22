@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-*~
-.config.mk
-local.mk
-boot/initramfs/
-glue/gonk/out
-glue/gonk/vendor
-glue/gonk-ics
-download-nexuss
-download-nexuss-ics
-objdir-gecko
-=======
 .config
 .repo/
 .userconfig
@@ -40,4 +28,3 @@ rilproxy/
 sdk/
 system/
 vendor/
->>>>>>> da97597bbf04b8f5bde5e3d041645e8b304010b0

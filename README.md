@@ -18,9 +18,7 @@ and talk to us on IRC:
 
   #B2G on irc.mozilla.org
 
-<<<<<<< HEAD
 See INSTALL file in repository for instructions on building and running B2G.
-=======
 ## Prerequisites
 
 ### Linux
